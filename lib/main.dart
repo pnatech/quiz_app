@@ -1,12 +1,19 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; //required starter code
 
 //void main() {
 //  runApp(MyApp());
 //}
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp()); //required starter code
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
+
+  void answerQuestion() {
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -20,18 +27,23 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('The question!'),
+            Text(
+              questions[questionIndex],
+            ),
             ElevatedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             ElevatedButton(
               child: Text('Answer 2'),
-              onPressed: null,
+              onPressed: () => print('Answer 2 chosen!'),
             ),
             ElevatedButton(
               child: Text('Answer 3'),
-              onPressed: null,
+              onPressed: () {
+                //...
+                print('Answer 3 chosen!');
+              },
             ),
           ],
         ),
