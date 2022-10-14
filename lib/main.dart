@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/question.dart'; //required starter code
+import './question.dart'; //required starter code
 
 //void main() {
 //  runApp(MyApp());
